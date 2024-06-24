@@ -1,0 +1,28 @@
+$orange: #ff6838;
+$silver200: #ececec;
+$silver100: #f9faff;
+$gray: #c2c2c2;
+$darkblue: #363853;
+
+$font: #31352b;
+$white: #fff;
+
+%rubik-300 {
+  font-family: "Rubik-Light", sans-serif;
+  font-weight: 300;
+}
+
+%rubik-400 {
+  font-family: "Rubik-Regular", sans-serif;
+  font-weight: 400;
+}
+
+%rubik-500 {
+  font-family: "Rubik-Medium", sans-serif;
+  font-weight: 500;
+}
+
+%rubik-700 {
+  font-family: "Rubik-Bold", sans-serif;
+  font-weight: 700;
+}

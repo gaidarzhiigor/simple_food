@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smile Food</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="images/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" href="css/style.min.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+    <header class="header">
+      <div class="container">
+        <div class="header__top">
+          <a class="logo" href="#">
+            <img class="logo__img" src="images/logo.svg" alt="Логотип сайту" />
+          </a>
+          <nav class="menu">
+            <ul class="menu__items">
+              <li class="menu__item">
+                <a class="menu__link menu__link--active animation" href="#">Головна</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link animation" href="#">Страви</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link animation" href="#">Контакти</a>
+              </li>
+            </ul>
+            <ul class="menu__services">
+              <li class="menu__service">
+                <a class="search__btn service__btn" href="#" target="_blank" rel="noopener noreferrer">
+                  <svg width="21" height="21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse
+                      cx="9.767"
+                      cy="9.63"
+                      rx="8.989"
+                      ry="8.884"
+                      stroke="#363853"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M16.018 16.27l3.524 3.475"
+                      stroke="#363853"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <span class="sr-only">Пошук товару</span>
+                </a>
+              </li>
+              <li class="menu__service">
+                <a class="cart__btn service__btn" href="#" target="_blank" rel="noopener noreferrer">
+                  <svg width="21" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M1 1.176l2.08.356.963 11.34a1.79 1.79 0 001.8 1.633h10.909a1.794 1.794 0 001.785-1.528l.949-6.482a1.328 1.328 0 00-1.135-1.501c-.064-.009-14.937-.014-14.937-.014m8.961 3.653h2.773"
+                      stroke="#363853"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      clip-rule="evenodd"
+                      d="M5.404 17.932a.54.54 0 01.544.538.541.541 0 01-.544.539.541.541 0 01-.544-.54.54.54 0 01.544-.537zm11.281 0c.3 0 .545.24.545.538a.542.542 0 01-.545.539.541.541 0 01-.544-.54.54.54 0 01.544-.537z"
+                      stroke="#363853"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <span class="sr-only">Перехід до кошика із замовленням</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+  </body>
+</html>
+
+<main class="main">
+  <section class="hero">
+    <div class="container">
+      <div class="hero__wrapper">
+        <div class="hero__inner">
+          <h1 class="hero__inner-title">Доставка</h1> 
+            <span class="hero__inner-subtitle">за 15 хвилин</span>
+          <p class="hero__inner-text">
+            Найшвидший сервіс доставки їжі у вашому місті. Якщо запізнемось - то доставка за наш рахунок
+          </p>
+          <button class="order__btn" type="button">Замовити</button>
+          <a class="details__btn animation" href="#">Детальніше</a>
+        </div>
+        <div class="hero__image" style="background-image: url('images/hero-bg.png')"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="popular">
+    <div class="container">
+      <h2 class="popular__title title">Популярне в категоріях</h2>
+      <ul class="menu__filtr">
+        <li class="menu__filtr-btn">
+          <button class="btn btn--burger" type="button" data-filter="all">Бургери</button>
+        </li>
+        <li class="menu__filtr-btn">
+          <button class="btn btn--pizza" type="button" data-filter=".category-a">Піца</button>
+        </li>
+        <li class="menu__filtr-btn">
+          <button class="btn btn--sandwich" type="button" data-filter=".category-b">Сендвічі</button>
+        </li>
+        <li class="menu__filtr-btn">
+          <button class="btn btn--azia" type="button" data-filter=".category-c">Азійська кухня</button>
+        </li>
+        <li class="menu__filtr-btn">
+          <button class="btn btn--sets" type="button" data-filter=".category-d">Сети</button>
+        </li>
+      </ul>
+      <ul class="product__items">
+        <li class="product__item mix category-a">
+          <article class="product__card">
+            <img class="product__card-img" src="images/menu/menu-1.png" alt="Зображення блюда з меню">
+            <p class="product__card-title">Чізбургер з листям салату</p>
+            <span class="product__card-price">160 грн.</span>
+            <button class="buy__btn" type="button">До кошика</button>
+          </article>
+        </li>
+        <li class="product__item mix category-b">
+          <article class="product__card">
+            <img class="product__card-img" src="images/menu/menu-2.png" alt="Зображення блюда з меню">
+            <p class="product__card-title">Біфбургер</p>
+            <span class="product__card-price">190 грн.</span>
+            <button class="buy__btn" type="button">До кошика</button>
+          </article>
+        </li>
+        <li class="product__item mix category-c">
+          <article class="product__card">
+            <img class="product__card-img" src="images/menu/menu-3.png" alt="Зображення блюда з меню">
+            <p class="product__card-title">Королівський чізбургер</p>
+            <span class="product__card-price">260 грн.</span>
+            <button class="buy__btn" type="button">До кошика</button>
+          </article>
+        </li>
+        <li class="product__item mix category-d">
+          <article class="product__card">
+            <img class="product__card-img" src="images/menu/menu-4.png" alt="Зображення блюда з меню">
+            <p class="product__card-title">Чорний гамбургер</p>
+            <span class="product__card-price">199 грн.</span>
+            <button class="buy__btn" type="button">До кошика</button>
+          </article>
+        </li>
+        <li class="product__item mix category-a">
+          <article class="product__card">
+            <img class="product__card-img" src="images/menu/menu-5.png" alt="Зображення блюда з меню">
+            <p class="product__card-title">Чікен бургер</p>
+            <span class="product__card-price">180 грн.</span>
+            <button class="buy__btn" type="button">До кошика</button>
+          </article>
+        </li>
+        <li class="product__item mix category-b">
+          <article class="product__card">
+            <img class="product__card-img" src="images/menu/menu-1.png" alt="Зображення блюда з меню">
+            <p class="product__card-title">Чізбургер з листям салату</p>
+            <span class="product__card-price">160 грн.</span>
+            <button class="buy__btn" type="button">До кошика</button>
+          </article>
+        </li>
+        <li class="product__item mix category-c">
+          <article class="product__card">
+            <img class="product__card-img" src="images/menu/menu-2.png" alt="Зображення блюда з меню">
+            <p class="product__card-title">Біфбургер</p>
+            <span class="product__card-price">190 грн.</span>
+            <button class="buy__btn" type="button">До кошика</button>
+          </article>
+        </li>
+        <li class="product__item mix category-d">
+          <article class="product__card">
+            <img class="product__card-img" src="images/menu/menu-3.png" alt="Зображення блюда з меню">
+            <p class="product__card-title">Королівський чізбургер</p>
+            <span class="product__card-price">260 грн.</span>
+            <button class="buy__btn" type="button">До кошика</button>
+          </article>
+        </li>
+        <li class="product__item mix category-a">
+          <article class="product__card">
+            <img class="product__card-img" src="images/menu/menu-4.png" alt="Зображення блюда з меню">
+            <p class="product__card-title">Чорний гамбургер</p>
+            <span class="product__card-price">199 грн.</span>
+            <button class="buy__btn" type="button">До кошика</button>
+          </article>
+        </li>
+        <li class="product__item mix category-b">
+          <article class="product__card">
+            <img class="product__card-img" src="images/menu/menu-5.png" alt="Зображення блюда з меню">
+            <p class="product__card-title">Чікен бургер</p>
+            <span class="product__card-price">180 грн.</span>
+            <button class="buy__btn" type="button">До кошика</button>
+          </article>
+        </li>
+      </ul>
+      <a class="product__items-btn details__btn animation" href="#">Показати ще</a>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+    <div class="container">
+        <div class="footer__wrapper">
+            <div class="footer__form">
+                <a class="logo footer__logo" href="#">
+                    <img class="logo__img" src="images/logo.svg" alt="Логотип сайту" />
+                </a>
+                <form class="form">
+                    <label>
+                        <input class="form__field" type="email" name="email" required placeholder="Ваш email">
+                    </label>
+                    <button class="form__btn" type="submit">Підписатися</button>
+                </form>
+            </div>
+            <div class="footer__menu">
+                <ul class="footer__menu-items">
+                    <li class="footer__menu-item">
+                        <a class="footer__menu-link" href="#">Як це працює</a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a class="footer__menu-link" href="#">Про нас</a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a class="footer__menu-link" href="#">Застосунок</a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a class="footer__menu-link" href="#">Продукти</a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a class="footer__menu-link" href="#">Новини</a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a class="footer__menu-link" href="#">Блог</a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a class="footer__menu-link" href="#">Страви</a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a class="footer__menu-link" href="#">Партнери</a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a class="footer__menu-link" href="#">Що нового?</a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a class="footer__menu-link" href="#">Меню</a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a class="footer__menu-link" href="#">ЧаПи</a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a class="footer__menu-link" href="#">Мапа сайту</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__contacts">
+                <ul class="footer__contacts-items">
+                    <li class="footer__contacts-item footer__contacts-item--location">
+                        <a class="footer__contacts-link" href="#">вул. Т.Г.Шевченка, 1</a>
+                    </li>
+                    <li class="footer__contacts-item footer__contacts-item--phone">
+                        <a class="footer__contacts-link" href="tel:380501112233">380501112233</a>
+                    </li>
+                    <li class="footer__contacts-item footer__contacts-item--message">
+                        <a class="footer__contacts-link" href="mailto:support@sfood.com">support@sfood.com</a>
+                    </li>
+                </ul>          
+                <ul class="footer__social-items">
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" href="#" target="_blank" rel="noopener noreferrer">
+                            <svg width="39" height="39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="19.5" cy="19.5" r="19.5" fill="#ECECEC" />
+                                <path
+                                    d="M17.547 29.526v-9.631H15v-3.468h2.547v-2.962c0-2.328 1.504-4.465 4.97-4.465 1.404 0 2.442.135 2.442.135l-.082 3.238s-1.058-.01-2.213-.01c-1.25 0-1.45.576-1.45 1.532v2.532h3.763l-.164 3.468h-3.6v9.631h-3.666z"
+                                    fill="#31352B" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" href="#" target="_blank" rel="noopener noreferrer">
+                            <svg width="39" height="39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="19.5" cy="19.5" r="19.5" fill="#ECECEC" />
+                                <path
+                                    d="M29.526 12.98a8.437 8.437 0 01-2.422.652 4.196 4.196 0 001.85-2.319 8.304 8.304 0 01-2.67 1.017A4.195 4.195 0 0023.212 11a4.205 4.205 0 00-4.206 4.208c0 .326.04.652.104.965a11.954 11.954 0 01-8.673-4.403 4.177 4.177 0 00-.573 2.124 4.21 4.21 0 001.875 3.505 4.244 4.244 0 01-1.902-.535v.051a4.207 4.207 0 003.372 4.13 4.456 4.456 0 01-1.107.143 5.61 5.61 0 01-.795-.064 4.214 4.214 0 003.933 2.918 8.43 8.43 0 01-5.223 1.798 8.49 8.49 0 01-1.016-.052 11.911 11.911 0 006.46 1.888c7.736 0 11.97-6.41 11.97-11.972 0-.182 0-.365-.013-.547a9.062 9.062 0 002.11-2.176z"
+                                    fill="#31352B" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" href="#" target="_blank" rel="noopener noreferrer">
+                            <svg width="39" height="39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="19.5" cy="19.5" r="19.5" fill="#ECECEC" />
+                                <path
+                                    d="M19.748 16.499a3.258 3.258 0 00-3.252 3.251 3.258 3.258 0 003.252 3.251 3.258 3.258 0 003.25-3.251 3.258 3.258 0 00-3.25-3.251zm9.751 3.251c0-1.346.013-2.68-.063-4.025-.076-1.56-.432-2.946-1.573-4.088-1.144-1.144-2.527-1.497-4.088-1.573-1.347-.075-2.681-.063-4.025-.063-1.346 0-2.68-.012-4.025.063-1.56.076-2.946.432-4.088 1.573-1.144 1.144-1.497 2.527-1.573 4.088-.075 1.347-.063 2.681-.063 4.025 0 1.344-.012 2.68.063 4.025.076 1.56.432 2.946 1.573 4.088 1.144 1.144 2.527 1.497 4.088 1.573 1.347.076 2.681.063 4.025.063 1.346 0 2.68.013 4.025-.063 1.56-.076 2.946-.432 4.088-1.573 1.144-1.144 1.497-2.527 1.573-4.088.078-1.344.063-2.679.063-4.025zm-9.751 5.003a4.996 4.996 0 01-5.003-5.003 4.996 4.996 0 015.003-5.003 4.996 4.996 0 015.002 5.003 4.996 4.996 0 01-5.002 5.003zm5.207-9.042a1.167 1.167 0 01-1.168-1.169c0-.646.522-1.168 1.168-1.168a1.167 1.167 0 01.827 1.995 1.166 1.166 0 01-.827.342z"
+                                    fill="#31352B" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer__copyright">
+        <p class="footer__copyright-text">© 2023 Simple Food</p>
+    </div>
+</footer>
+</div>
+<script src="js/main.min.js"></script>
+</body>
+
+</html>
