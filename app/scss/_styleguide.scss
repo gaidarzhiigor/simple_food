@@ -1,0 +1,267 @@
+.logo {
+  border-radius: 5px;
+  transition: box-shadow 0.5s, opacity 0.5s;
+
+  &:focus {
+    box-shadow: 0 0 0 2px $orange07;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.animation {
+  border-radius: 5px;
+  transition: box-shadow 0.5s, color 0.5s, text-shadow 0.5s;
+
+  &:focus {
+    box-shadow: 0 0 0 2px $orange07;
+  }
+
+  &:hover {
+    color: $orange900;
+  }
+
+  &:active {
+    text-shadow: 2px 2px 5px 0 rgba(49, 53, 43, 0.5);
+  }
+}
+
+.user__btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 5px;
+  transition: box-shadow 0.5s, background-color 0.5s;
+
+  &:focus {
+    box-shadow: 0 0 0 2px $orange07;
+    background-color: $orange01;
+  }
+
+  &:hover {
+    background-color: $orange900;
+
+    .user__btn-icon {
+      stroke: $white;
+    }
+
+    .user__stat {
+      color: $orange900;
+      background-color: $white;
+    }
+  }
+ 
+
+  &:active {
+    box-shadow: none;
+    background-color: transparent;
+
+    .user__btn-icon {
+      stroke: $darkblue900;
+    }
+
+    .user__stat {
+      color: $white;
+      background-color: $orange900;
+    }
+  }
+}
+
+.order {
+  border-radius: 5px;
+  transition: box-shadow 0.5, color 0.5, background-color 0.5;
+
+  &:focus {
+    box-shadow: 0 0 0 2px $orange07;
+    background-color: $orange01;
+    color: $orange900;
+  }
+
+  &:hover {
+    box-shadow: 0 0 0 2px $orange07, 0 5px 12px 0 $orange02;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: $orange900;
+  }
+
+  &:active {
+    box-shadow: none;
+    background-color: $orange01;
+    color: $orange900;
+  }
+}
+
+.service {
+  border-radius: 5px;
+  transition: box-shadow 0.5s, background-color 0.5s, text-decoration 0.5s, text-shadow 0.5s;
+
+  &:focus {
+    box-shadow: 0 0 0 2px $orange07;
+    background-color: rgba(255, 255, 255, 0.01);
+    text-decoration: transparent;
+  }
+
+  &:hover {
+    box-shadow: none;
+    color: $orange900;
+    text-decoration: transparent;
+  }
+
+  &:active {
+    text-shadow: 2px 2px 5px 0 rgba(54, 56, 83, 0.5);
+    color: $darkblue900;
+  }
+}
+
+.menu-filter__btn {
+  transition: box-shadow 0.3s, background-color 0.3s, color 0.3s, fill 0.5s;
+
+  &:focus {
+    box-shadow: 0 0 0 2px $orange07;
+    background-color: $white;
+  }
+
+  &:hover {
+    color: $orange900;
+    box-shadow: 0 0 0 2px $orange07;
+    background: $orange01;
+    .menu-filter__icon {
+      fill: $orange900;
+    }
+  }
+
+  &:active {
+    box-shadow: none;
+    color: $darkblue900;
+    .menu-filter__icon {
+      fill: $darkblue900;
+    }
+  }
+}
+
+.rest-card__details {
+ transition: box-shadow 0.5s, background-color 0.5s, ;
+
+  &:focus {
+    box-shadow: 0 0 0 2px $orange07;
+    background-color: #fff2ed;
+
+    .rest-card__arrow{
+      fill: $orange900;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 0 0 2px $orange07;
+    background-color: $white;
+
+    .rest-card__arrow{
+      transform: translateX(20px);
+      fill: $orange900;
+      transition: transform 0.5s;
+    }
+  }
+
+  &:active {
+    box-shadow: none;
+
+    .rest-card__arrow{
+      transform: translateX(0);
+      fill: $orange900;
+      transition: transform 0.5s;
+    }
+  }
+}
+
+.form__field {
+  border-radius: 5px;
+  transition: box-shadow 0.5s;
+
+  &:focus {
+    box-shadow: 0 0 0 2px $orange900;
+  }
+
+  &::placeholder {
+    transition: color 0.5s;
+  }
+
+  &:hover::placeholder {
+    color: $darkblue900;
+  }
+}
+
+.form__btn {
+  border-radius: 5px;
+  transition: background-color 0.5s, box-shadow 0.5s, color 0.5s;
+
+  &:focus {
+    box-shadow: 0 0 0 2px $orange07;
+    background-color: $orange01;
+    color: $orange900;
+
+    .form__btn-icon {
+      fill: $orange900;
+      transition: fill 0.5s;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 0 0 2px $orange07, 0 5px 12px 0 $orange02;
+    background: $white;
+    color: $orange900;
+
+    .form__btn-icon {
+      fill: $orange900;
+      transition: fill 0.5s;
+    }
+  }
+
+  &:active {
+    background-color: #fff2ed;
+    box-shadow: 0 0 0 2px transparent;
+    color: $orange900;
+
+    .form__btn-icon {
+      fill: $orange900;
+      transition: fill 0.5s;
+    }
+  }
+}
+
+.social-contacts__link {
+  width: 43px;
+  height: 43px;
+  transition: border 0.5s, border-radius 0.5s;
+  
+  &:focus svg{
+    border: 2px solid $orange07;
+    border-radius: 50%;
+  }
+
+  &:hover svg circle {
+    fill:$orange900;
+    transition: fill 0.5s;
+  }
+  &:hover svg path {
+    fill:$white;
+    transition: fill 0.5s;
+  }
+
+  &:active svg circle {
+    fill:$white;
+    transition: fill 0.5s;
+  }
+  &:active svg path {
+    fill:$orange900;
+    transition: fill 0.5s;
+  }
+}
+
+
+
+
+
