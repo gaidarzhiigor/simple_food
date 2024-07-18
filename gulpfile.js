@@ -74,20 +74,20 @@ function scripts() {
 // ф-ция обработки изображений + плагин для кэш (сохраняем изображения изначально в images/src)
 function images() {
   // прописываем путь ко всем изображениям, кроме svg изображений
-  return src(['app/images/src/*.*', '!app/images/src/*.svg'])
+  return src(['app/images/src/**/*.*', '!app/images/src/*.svg'])
       // отслеживает, чтобы повторно не обрабатывались изображения
       .pipe(newer('app/images'))
       // задаем качество обработки изображения
       .pipe(avif({quality : 50 }))
 
       // прописываем путь ко всем изображениям
-      .pipe(src('app/images/src/*.*'))
+      .pipe(src('app/images/src/**/*.*'))
       // отслеживает, чтобы повторно не обрабатывались изображения
       .pipe(newer('app/images'))
       .pipe(webp())
 
       // прописываем путь ко всем изображениям
-      .pipe(src('app/images/src/*.*'))
+      .pipe(src('app/images/src/**/*.*'))
       // отслеживает, чтобы повторно не обрабатывались изображения
       .pipe(newer('app/images'))
       .pipe(imagemin())
@@ -104,7 +104,7 @@ function sprite() {
     .pipe(cheerio({
       run: ($) => {
         $("[fill]").removeAttr("fill"); // очищаем цвет у иконок по умолчанию, чтобы можно было задать свой
-        $("[stroke]").removeAttr("stroke"); // очищаем, если есть лишние атрибуты строк
+        $("[stroke]").removeAttr("stroke"); // очищаем, если есть лишние атрибуты stroke
         $("[style]").removeAttr("style"); // убираем внутренние стили для иконок
       },
       parserOptions: { xmlMode: true },
@@ -190,7 +190,7 @@ function building() {
     [
       "app/css/style.min.css",
       "app/images/**/*.*",
-      "!app/images/src/*.*",
+      "!app/images/src/**/*.*",
       "!app/images/icons/*.*",
       "app/images/*.svg",
       "app/images/sprite.svg",

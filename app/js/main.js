@@ -346,6 +346,5 @@ $(".product__slider-items").slick({
   ],
 });
 
-
 // mixitup
 var mixer = mixitup(".popular-categories__items");
