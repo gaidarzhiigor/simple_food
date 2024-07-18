@@ -1,0 +1,119 @@
+<header class="header">
+  <div class="header__top">
+    <div class="container">
+      <nav class="menu">
+        <a class="logo header__logo" href="#">
+          <img class="logo__img" src="images/logo.svg" width="200" height="39" alt="Логотип сайту">
+        </a>
+        <ul class="menu__items">
+          <li class="menu__item">
+            <a class="menu__link animation" href="index.html">Головна</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link menu__link--active animation" href="#">Страви</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link animation" href="#">Контакти</a>
+          </li>
+        </ul>
+        <ul class="user">
+          <li class="user__item">
+            <button class="user__btn" type="button">
+              <svg class="user__btn-icon">
+                <use xlink:href="images/sprite.svg#search-icon"></use>
+              </svg>
+              <span class="sr-only">Пошук товару</span>
+            </button>
+          </li>
+          <li class="user__item">
+            <button class="user__btn user__btn--cart" type="button">
+              <svg class="user__btn-icon">
+                <use xlink:href="images/sprite.svg#cart-icon"></use>
+              </svg>
+              <span class="sr-only">Перехід до кошика із замовленням</span>
+              <span class="user__stat">4</span>
+            </button>
+          </li>
+        </ul>
+        <button class="menu__btn mob-btn" type="button">
+          <span class="sr-only">Відкрити меню</span>
+          <span class="menu__btn-line mob-btn__line"></span>
+        </button>
+      </nav>
+    </div>
+  </div>
+  <div class="mobile">
+    <nav class="menu mobile__menu">
+      <div class="mobile__inner">
+        <a class="logo mobile__logo" href="#">
+          <img class="logo__img" src="images/logo.svg" width="200" height="39" alt="Логотип сайту">
+        </a>
+        <button class="mobile__btn mob-btn" type="button">
+          <span class="sr-only">Відкрити меню</span>
+          <span class="menu__btn-line mob-btn__line"></span>
+        </button>
+      </div>
+      <ul class="menu__items mobile__items">
+        <li class="menu__item mobile__item">
+          <a class="menu__link animation" href="index.html">Головна</a>
+        </li>
+        <li class="menu__item mobile__item">
+          <a class="menu__link menu__link--active animation" href="#">Страви</a>
+        </li>
+        <li class="menu__item mobile__item">
+          <a class="menu__link animation" href="#">Контакти</a>
+        </li>
+      </ul>
+    </nav>
+    <address class="address">
+      <div class="contacts mobile__contacts">
+        <ul class="contacts__items">
+          <li class="contacts__item contacts__item--location">
+            <svg class="contacts__item-icon">
+              <use xlink:href="images/sprite.svg#location-icon"></use>
+            </svg>
+            <a class="contacts__link animation" href="#">вул. Т.Г.Шевченка, 1</a>
+          </li>
+          <li class="contacts__item contacts__item--phone">
+            <svg class="contacts__item-icon">
+              <use xlink:href="images/sprite.svg#phone-icon"></use>
+            </svg>
+            <a class="contacts__link animation" href="tel:380501112233">380501112233</a>
+          </li>
+          <li class="contacts__item contacts__item--message">
+            <svg class="contacts__item-icon">
+              <use xlink:href="images/sprite.svg#message-icon"></use>
+            </svg>
+            <a class="contacts__link animation" href="mailto:support@sfood.com">support@sfood.com</a>
+          </li>
+        </ul>
+        <ul class="social-contacts">
+          <li class="social-contacts__item">
+            <span class="sr-only">Посилання на Facebook</span>
+            <a class="social-contacts__link" href="#" target="_blank" rel="noopener noreferrer">
+              <svg class="social-contacts__link-icon social-contacts__link-icon--facebook">
+                <use xlink:href="images/sprite.svg#facebook-icon"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-contacts__item">
+            <span class="sr-only">Посилання на Twitter</span>
+            <a class="social-contacts__link" href="#" target="_blank" rel="noopener noreferrer">
+              <svg class="social-contacts__link-icon social-contacts__link-icon--twitter">
+                <use xlink:href="images/sprite.svg#twitter-icon"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-contacts__item">
+            <span class="sr-only">Посилання на Instagram</span>
+            <a class="social-contacts__link" href="#" target="_blank" rel="noopener noreferrer">
+              <svg class="social-contacts__link-icon social-contacts__link-icon--instagram">
+                <use xlink:href="images/sprite.svg#instagram-icon"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </address>
+  </div>
+</header>

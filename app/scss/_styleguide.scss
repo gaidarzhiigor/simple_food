@@ -1,0 +1,445 @@
+.logo {
+  border-radius: 5px;
+  transition: box-shadow 0.5s, opacity 0.5s;
+
+  &:focus {
+    box-shadow: 0 0 0 2px $orange07;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.animation {
+  border-radius: 5px;
+  transition: box-shadow 0.5s, color 0.5s, text-shadow 0.5s;
+
+  &:focus {
+    box-shadow: 0 0 0 2px $orange07;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: $orange900;
+    }
+  }
+
+  &:active {
+    text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
+  }
+}
+
+.user {
+  &__btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 5px;
+    transition: box-shadow 0.5s, background-color 0.5s;
+
+    &:focus {
+      box-shadow: 0 0 0 2px $orange07;
+      background-color: $orange01;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: $orange900;
+
+        .user__btn-icon {
+          stroke: $white;
+        }
+
+        .user__stat {
+          color: $orange900;
+          background-color: $white;
+        }
+      }
+    }
+
+    &:active {
+      box-shadow: none;
+      background-color: transparent;
+
+      .user__btn-icon {
+        stroke: $darkblue900;
+      }
+
+      .user__stat {
+        color: $white;
+        background-color: $orange900;
+      }
+    }
+  }
+}
+
+.order {
+  border-radius: 5px;
+  transition: box-shadow 0.5s, color 0.5s, background-color 0.5s;
+
+  &:focus {
+    box-shadow: 0 0 0 2px $orange07;
+    background-color: $orange01;
+    color: $orange900;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: 0 0 0 2px $orange07, 0 5px 12px 0 $orange02;
+      background-color: $white01;
+      color: $orange900;
+    }
+  }
+
+  &:active {
+    box-shadow: none;
+    background-color: $orange01;
+    color: $orange900;
+  }
+}
+
+.service {
+  border-radius: 5px;
+  transition: box-shadow 0.5s, background-color 0.5s, text-decoration 0.5s, text-shadow 0.5s;
+
+  &:focus {
+    box-shadow: 0 0 0 2px $orange07;
+    background-color: $white01;
+    text-decoration: transparent;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: none;
+      color: $orange900;
+      text-decoration: transparent;
+    }
+  }
+
+  &:active {
+    text-shadow: 2px 2px 5px rgba(54, 56, 83, 0.5);
+    color: $darkblue900;
+  }
+}
+
+.menu-filter {
+  &__btn {
+    transition: box-shadow 0.3s, background-color 0.3s, color 0.3s, fill 0.5s;
+
+    &:focus {
+      box-shadow: 0 0 0 2px $orange07;
+      background-color: $white;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: $orange900;
+        box-shadow: 0 0 0 2px $orange07;
+        background-color: $orange01;
+
+        .menu-filter__icon {
+          fill: $orange900;
+        }
+      }
+    }
+
+    &:active {
+      box-shadow: inset 0 -5px 12px 0 $orange02;
+      background: $white;
+      color: $darkblue900;
+
+      .menu-filter__icon {
+        fill: $darkblue900;
+      }
+    }
+  }
+}
+
+.rest-card {
+  &__details {
+    transition: box-shadow 0.5s, background-color 0.5s;
+
+    &:focus {
+      box-shadow: 0 0 0 2px $orange07;
+      background-color: #fff2ed;
+
+      .rest-card__arrow {
+        fill: $orange900;
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        box-shadow: 0 0 0 2px $orange07;
+        background-color: $white;
+
+        .rest-card__arrow {
+          transform: translateX(20px);
+          fill: $orange900;
+          transition: transform 0.5s;
+        }
+      }
+    }
+
+    &:active {
+      box-shadow: none;
+      background: #fff2ed;
+
+      .rest-card__arrow {
+        transform: translateX(0);
+        fill: $orange900;
+        transition: transform 0.5s;
+      }
+    }
+  }
+}
+
+.form {
+  &__btn {
+    border-radius: 5px;
+    transition: background-color 0.5s, box-shadow 0.5s, color 0.5s;
+
+    &:focus {
+      box-shadow: 0 0 0 2px $orange07;
+      background-color: $orange01;
+      color: $orange900;
+
+      .form__btn-icon {
+        fill: $orange900;
+        transition: fill 0.5s;
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        box-shadow: 0 0 0 2px $orange07, 0 5px 12px 0 $orange02;
+        background: $white;
+        color: $orange900;
+
+        .form__btn-icon {
+          fill: $orange900;
+          transition: fill 0.5s;
+        }
+      }
+    }
+
+    &:active {
+      background-color: #fff2ed;
+      box-shadow: 0 0 0 2px transparent;
+      color: $orange900;
+
+      .form__btn-icon {
+        fill: $orange900;
+        transition: fill 0.5s;
+      }
+    }
+  }
+}
+
+.social-contacts {
+  &__link {
+    transition: box-shadow 0.5s, background-color 0.5s;
+
+    &:focus {
+      box-shadow: 0 0 0 2px $orange07;
+      background-color: #fff2ed;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        box-shadow: none;
+        background-color: $orange900;
+
+        .social-contacts__link-icon {
+          fill: $white;
+        }
+      }
+    }
+
+    &:active {
+      box-shadow: none;
+      background-color: #fff2ed;
+
+      .social-contacts__link-icon {
+        fill: $orange900;
+      }
+    }
+  }
+}
+
+.pagination {
+  transition: box-shadow 0.5s, background-color 0.5s, border 0.5s, color 0.5s;
+
+  &:focus {
+    box-shadow: 0 0 0 2px $orange900;
+    background-color: #fff2ed;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      border: none;
+      color: $white;
+      background-color: $orange900;
+
+      .arrow-right {
+        fill: $white;
+      }
+    }
+  }
+
+  &:active {
+    color: $darkblue900;
+    box-shadow: inset 0 -1px 4px 2px rgba(0, 0, 0, 0.15);
+    background-color: #fff2ed;
+  }
+}
+
+.catalog-products {
+  &__pagination {
+    .arrow-right {
+      fill: $darkblue900;
+      transition: fill 0.5s;
+    }
+  }
+}
+
+.catalog-products__pick-select {
+  background-color: #fff2ed;
+
+  @media (hover: hover) {
+    &:hover {
+      .jq-selectbox__select {
+        border: 1px solid $orange900;
+        color: $orange900;
+      }
+      .jq-selectbox__trigger-arrow {
+        background-color: $orange900;
+      }
+    }
+  }
+}
+
+.product-info {
+  &__counter-btn--minus {
+    transition: background-color 0.5s, box-shadow 0.5s, color 0.5s;
+
+    &:focus {
+      box-shadow: 0 0 0 2px $orange07;
+      background-color: $orange01;
+      color: $orange900;
+
+      .product-info__counter-minus {
+        fill: $orange900;
+        transition: fill 0.5s;
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        box-shadow: 0 0 0 2px $orange07, 0 5px 12px 0 $orange02;
+        background: $white;
+        color: $orange900;
+
+        .product-info__counter-minus {
+          fill: $orange900;
+          transition: fill 0.5s;
+        }
+      }
+    }
+
+    &:active {
+      background-color: #fff2ed;
+      box-shadow: 0 0 0 2px transparent;
+      color: $orange900;
+
+      .product-info__counter-minus {
+        fill: $orange900;
+        transition: fill 0.5s;
+      }
+    }
+  }
+
+  &__counter-btn--plus {
+    transition: background-color 0.5s, box-shadow 0.5s, color 0.5s;
+
+    &:focus {
+      box-shadow: 0 0 0 2px $orange07;
+      background-color: $orange01;
+      color: $orange900;
+
+      .product-info__counter-plus {
+        fill: $orange900;
+        transition: fill 0.5s;
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        box-shadow: 0 0 0 2px $orange07, 0 5px 12px 0 $orange02;
+        background: $white;
+        color: $orange900;
+
+        .product-info__counter-plus {
+          fill: $orange900;
+          transition: fill 0.5s;
+        }
+      }
+    }
+
+    &:active {
+      background-color: #fff2ed;
+      box-shadow: 0 0 0 2px transparent;
+      color: $orange900;
+
+      .product-info__counter-plus {
+        fill: $orange900;
+        transition: fill 0.5s;
+      }
+    }
+  }
+
+  &__cart-btn {
+    transition: background-color 0.5s, box-shadow 0.5s, color 0.5s;
+
+    &:focus {
+      box-shadow: 0 0 0 2px $orange07;
+      background-color: $orange01;
+      color: $orange900;
+
+      .product-info__cart-icon {
+        stroke: $orange900;
+        transition: stroke 0.5s;
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        box-shadow: 0 0 0 2px $orange07, 0 5px 12px 0 $orange02;
+        background: $white;
+        color: $orange900;
+
+        .product-info__cart-icon {
+          stroke: $orange900;
+          transition: stroke 0.5s;
+        }
+      }
+    }
+
+    &:active {
+      background-color: #fff2ed;
+      box-shadow: 0 0 0 2px transparent;
+      color: $orange900;
+
+      .product-info__cart-icon {
+        stroke: $orange900;
+        transition: stroke 0.5s;
+      }
+    }
+  }
+}

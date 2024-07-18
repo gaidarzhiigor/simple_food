@@ -1,0 +1,45 @@
+$orange900: #ff6838;
+$silver200: #ececec;
+$silver100: #f9faff;
+$gray: #c2c2c2;
+$darkblue900: #363853;
+
+$font: #31352b;
+$white: #fff;
+
+$orange07: rgba(255, 104, 56, 0.7);
+$orange05: rgba(255, 104, 56, 0.5);
+$orange02: rgba(255, 104, 56, 0.2);
+$orange01: rgba(255, 104, 56, 0.1);
+
+$white01: rgba(255, 255, 255, 0.01);
+
+
+%rubik-300 {
+  font-family: "Rubik", sans-serif;
+  font-weight: 300;
+}
+
+%rubik-400 {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+}
+
+%rubik-500 {
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+}
+
+%italic {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+$breakpoints: (
+  "phone-small": 377px,
+  "phone": 576px,
+  "tablet": 768px,
+  "tablet-2": 992px,
+  "desktop": 1200px
+);

@@ -1,0 +1,264 @@
+@import "vars";
+@import "mixin";
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+body {
+  background-color: $silver100;
+  @extend %rubik-400;
+  font-size: 20px;
+  line-height: 1.5;
+  color: $font;
+
+  @include mq("tablet") {
+    &.lock,
+    &.overlock {
+      overflow-y: hidden;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: fixed;
+        left: 15px;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 36px;
+  @include mq("tablet") {
+    font-size: 30px;
+  }
+  @include mq("phone") {
+    font-size: 24px;
+  }
+  font-weight: 500;
+  line-height: 1.3;
+  color: $darkblue900;
+}
+
+.subtitle {
+  padding: 15px 0 15px 15px;
+  border-bottom: 1px solid $silver200;
+  width: 100%;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  color: $darkblue900;
+}
+
+.section {
+  margin-bottom: 120px;
+
+  @include mq("tablet-2") {
+    margin-bottom: 80px;
+  }
+
+  @include mq("phone") {
+    margin-bottom: 40px;
+  }
+}
+
+.mob-btn {
+  position: relative;
+  display: none;
+  width: 44px;
+  height: 44px;
+
+  &::after,
+  &::before,
+  &__line {
+    position: absolute;
+    content: "";
+    width: 30px;
+    right: 7px;
+    height: 2px;
+    background-color: $darkblue900;
+  }
+
+  &::before {
+    top: 10px;
+  }
+
+  &::after {
+    bottom: 10px;
+  }
+
+  @include mq("tablet") {
+    display: block;
+
+    &.active::before {
+      top: 19px;
+      transform: rotate(45deg);
+    }
+
+    &.active::after {
+      bottom: 23px;
+      transform: rotate(-45deg);
+    }
+
+    &.active &__line {
+      transform: scale(0);
+    }
+  }
+}
+
+.breadcrumbs {
+  padding: 160px 0 60px;
+
+  @include mq("tablet") {
+    padding: 120px 0 50px;
+  }
+
+  @include mq("phone") {
+    padding: 75px 0 40px;
+  }
+
+  &__inner {
+    background-color: $orange01;
+  }
+
+  &__items {
+    display: flex;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    color: #505050;
+  }
+
+  &__item {
+    position: relative;
+    margin-right: 16px;
+    padding: 23px 0 22px;
+    white-space: nowrap;
+
+    &::after {
+      position: absolute;
+      content: " ";
+      top: 26px;
+      right: -11px;
+      width: 6px;
+      height: 10px;
+      background-image: url("../images/crumbs-arrow.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    &:last-child {
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.tabs {
+  &__form-label {
+    font-size: 20px;
+    line-height: 1.3;
+    color: #505050;
+  }
+}
+
+.rating {
+  display: flex;
+  align-items: flex-end;
+  font-size: 25px;
+  line-height: 0.7;
+
+  &__body {
+    position: relative;
+
+    &::before {
+      content: "★★★★★";
+      display: block;
+      color: rgba(193, 193, 193, 0.3);
+    }
+  }
+
+  &__active {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+
+    &::before {
+      content: "★★★★★";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      color: rgba(255, 184, 0, 1);
+
+    }
+  }
+
+  &__items {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -2px;
+    left: 0;
+    display: flex;
+  }
+
+  &__item {
+    flex: 0 0 15%;
+    height: 100%;
+    opacity: 0;
+  }
+
+  &__value {
+    padding-left: 10px;
+    font-size: 50%;
+    line-height: 1;
+    display: none;
+  }
+}
