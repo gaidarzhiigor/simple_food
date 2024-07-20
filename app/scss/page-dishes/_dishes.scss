@@ -1,0 +1,543 @@
+.catalog-products {
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+
+    @include mq("tablet") {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__title {
+    @include mq("tablet") {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__btn {
+    display: none;
+    width: 47px;
+    height: 47px;
+    margin-right: 20px;
+    padding: 6px 8px;
+    background-color: #faeded;
+    border-radius: 3px;
+
+    @include mq("tablet") {
+      display: block;
+    }
+  }
+
+  &__btn-icon {
+    width: 32px;
+    height: 34px;
+    fill: $orange900;
+  }
+
+  &__pick {
+    display: flex;
+    align-items: center;
+
+    .jq-selectbox {
+      z-index: 1;
+
+      &__select {
+        height: 47px;
+        padding: 15px 15px 15px 15px;
+        border: 1px solid $silver200;
+        border-radius: 3px;
+        @extend %rubik-400;
+        font-size: 14px;
+        line-height: 1.2;
+        letter-spacing: 0.03em;
+        text-shadow: none;
+        box-shadow: none;
+        background-color: $white;
+        color: $font;
+        transition: border 0.5s, color 0.5s, background-color 0.5s;
+      }
+
+      &__trigger {
+        border-left: none;
+      }
+
+      &__trigger-arrow {
+        position: absolute;
+        top: 21px;
+        right: 12px;
+        width: 11px;
+        height: 6px;
+        border: none;
+        mask-image: url("../images/sprite.svg#select-arrow");
+        mask-repeat: no-repeat;
+        mask-size: cover;
+        mask-position: center;
+        background-color: $gray;
+      }
+
+      &__dropdown {
+        width: 100%;
+        padding: 10px 15px;
+        border: 1px solid $silver200;
+        background-color: $white;
+        box-shadow: none;
+      }
+
+      & li {
+        font-size: 14px;
+        line-height: 1.2;
+        letter-spacing: 0.03em;
+        color: $font;
+
+        &:not(:last-child) {
+          padding-bottom: 5px;
+        }
+
+        @media (hover: hover) {
+          &:hover {
+            background-color: #fff2ed;
+          }
+        }
+      }
+
+      & li.selected {
+        background-color: #fff2ed;
+        color: $font;
+      }
+    }
+  }
+
+  &__pick-sort {
+    width: 130px;
+    margin-right: 20px;
+  }
+
+  &__pick-show {
+    width: 92px;
+  }
+
+  &__inner {
+    display: flex;
+
+    @include mq("desktop") {
+      justify-content: space-evenly;
+    }
+
+    @include mq("tablet") {
+      justify-content: center;
+    }
+  }
+
+  &__filter {
+    margin-right: 30px;
+    width: 270px;
+    transition: transform 0.3s;
+
+    @include mq("tablet") {
+      margin-right: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 270px;
+      height: 100vh;
+      overflow-y: auto;
+      z-index: 2;
+      background-color: $white;
+      transform: translateX(-500%);
+    }
+
+    &.active {
+      transform: translateX(0);
+    }
+  }
+
+  &__filter-btn {
+    margin: 20px 20px 20px auto;
+    border-radius: 3px;
+    background-color: #faeded;
+  }
+
+  &__categories {
+    margin-bottom: 30px;
+    border: 1px solid $silver200;
+    border-radius: 5px;
+    background-color: $white;
+  }
+
+  &__categories-items {
+    padding: 25px 0 25px 15px;
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: 0.03em;
+    color: $font;
+  }
+
+  &__categories-item {
+    &:not(:last-child) {
+      padding-bottom: 12px;
+    }
+  }
+
+  &__categories-link {
+    &--active {
+      color: $orange900;
+    }
+  }
+
+  &__offers {
+    margin-bottom: 30px;
+    border: 1px solid $silver200;
+    border-radius: 5px;
+    background-color: $white;
+  }
+
+  &__offers-form {
+    padding: 20px 0 25px 15px;
+  }
+
+  &__offers-label {
+    display: flex;
+    padding-left: 36px;
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: 0.03em;
+    color: $font;
+    transition: color 0.5s;
+
+    &:hover {
+      color: $orange900;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 13px;
+    }
+  }
+
+  &__offers-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    transition: border 0.5s, background-color 0.5s;
+
+    &:focus + .catalog-products__offers-checkbox {
+      border: 1px solid $orange900;
+      border-radius: 3px;
+      background-color: #fff2ed;
+    }
+
+    &:hover + .catalog-products__offers-checkbox {
+      border: 1px solid $orange900;
+      border-radius: 3px;
+      background-color: #fff2ed;
+    }
+
+    &:checked + .catalog-products__offers-checkbox {
+      border: 1px solid $darkblue900;
+      background-color: #fff2ed;
+      background-image: url("../images/sprite.svg#check-icon");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  }
+
+  &__offers-checkbox {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    margin-left: -36px;
+    border-radius: 3px;
+    border: 1px solid $silver200;
+    background-color: $orange02;
+    transition: border 0.5s, background-color 0.5s;
+  }
+
+  &__price {
+    border: 1px solid $silver200;
+    border-radius: 5px;
+    background-color: $white;
+  }
+
+  &__price-controls {
+    padding: 20px 15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__price-label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    color: $gray;
+  }
+
+  &__price-from,
+  &__price-to {
+    width: 70px;
+    height: 40px;
+    margin: 0 5px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0.03em;
+    color: $font;
+    border-radius: 3px;
+    border: 1px solid $orange01;
+    background-color: #faeded;
+
+    &:focus {
+      border: 1px solid $orange900;
+      background-color: #fff2ed;
+    }
+  }
+
+  &__price-symbol {
+    width: 10px;
+    height: 16px;
+    fill: $gray;
+  }
+
+  &__price-form {
+    padding: 0 15px 25px 15px;
+
+    .irs-line {
+      height: 2px;
+      background-color: $gray;
+    }
+
+    .irs-min,
+    .irs-max,
+    .irs-from,
+    .irs-to {
+      display: none;
+    }
+
+    .irs-bar {
+      background-color: $orange900;
+    }
+
+    .irs-handle {
+      top: 28px;
+      width: 19px;
+      height: 18px;
+      border: none;
+      background-color: $orange900;
+    }
+  }
+
+  &__content-items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 60px;
+
+    @include mq("desktop") {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include mq("tablet-2") {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mq("tablet") {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 20px;
+      row-gap: 20px;
+    }
+
+    @include mq("phone") {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 5px;
+      row-gap: 10px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__content-item {
+    max-width: 210px;
+    width: 100%;
+
+    @include mq("phone") {
+      &:nth-child(n + 7) {
+        display: none;
+      }
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__pagination-arrows {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    background-color: #fff2ed;
+
+    &:not(:last-child) {
+      margin-right: 6px;
+    }
+  }
+
+  &__pagination-icon {
+    width: 11px;
+    height: 18px;
+    fill: $gray;
+  }
+
+  &__pagination-items {
+    display: flex;
+  }
+
+  &__pagination-item {
+    margin-right: 6px;
+
+    @include mq("phone") {
+      &:nth-child(even) {
+        display: none;
+      }
+    }
+  }
+
+  &__pagination-link {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    background-color: #fff2ed;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    letter-spacing: 0.03em;
+    color: $darkblue900;
+
+    &--active {
+      border: 1px solid $darkblue900;
+    }
+  }
+}
+
+.promo {
+  &__title {
+    margin-bottom: 60px;
+
+    @include mq("tablet") {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+  }
+
+  &__items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    @include mq("tablet-2") {
+      flex-wrap: nowrap;
+      gap: 15px;
+    }
+
+    @include mq("tablet") {
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    & .slick-slide {
+      display: flex;
+      justify-content: center;
+    }
+
+    & .slick-dots {
+      position: absolute;
+      display: flex;
+      left: 50%;
+      bottom: 13px;
+      transform: translateX(-50%);
+      gap: 0 15px;
+
+      & li {
+        font-size: 0;
+        border-radius: 50%;
+        background-color: $gray;
+
+        &.slick-active {
+          background-color: $orange900;
+        }
+      }
+
+      & li button {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        transition: background-color 0.5s, box-shadow 0.5s;
+
+        &:focus {
+          box-shadow: 0 0 0 2px $orange900;
+        }
+
+        &:active {
+          background-color: $orange05;
+          box-shadow: none;
+        }
+      }
+
+      @include mq("phone") {
+        bottom: 0;
+      }
+    }
+  }
+
+  &__item {
+    @include mq("tablet-2") {
+      width: 30%;
+    }
+
+    @include mq("tablet") {
+      width: 45%;
+    }
+  }
+}
+
+.promo-card {
+  height: 100%;
+
+  @include mq("phone") {
+    margin-bottom: 28px;
+  }
+
+  &__info {
+    padding: 15px 20px;
+    max-width: 370px;
+  }
+
+  &__title {
+    margin-bottom: 0;
+    white-space: wrap;
+
+    @include mq("tablet-2") {
+      font-size: 20px;
+    }
+
+    @include mq("phone") {
+      font-size: 24px;
+    }
+  }
+}

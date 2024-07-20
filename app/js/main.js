@@ -1,10 +1,20 @@
 $(function () {
   // scroll header sticky
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 1) {
+  $(window).on('load', function () {
+    if (localStorage.getItem('isSticky') === 'true') {
       $(".header__top").addClass("sticky");
     } else {
       $(".header__top").removeClass("sticky");
+    }
+  });
+  
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 1) {
+      $(".header__top").addClass("sticky");
+      localStorage.setItem('isSticky', 'true');
+    } else {
+      $(".header__top").removeClass("sticky");
+      localStorage.setItem('isSticky', 'false');
     }
   });
 
@@ -240,7 +250,7 @@ function initRatings() {
 
     setRatingActiveWidth();
 
-    if (rating.classList.contains('rating__set')) {
+    if (rating.classList.contains('rating-set')) {
       setRating(rating);
     }
   }
@@ -326,25 +336,94 @@ $(".offers__items").slick({
   ],
 });
 
-$(".product__slider-items").slick({
-  nextArrow:
-    '<button type="button" class="product__slider-btn product__slider-btn--next"><svg class="product__slider-arrow"><use xlink:href="images/sprite.svg#slick-back"></use></svg>',
-  prevArrow:
-    '<button type="button" class="product__slider-btn product__slider-btn--back"><svg class="product__slider-arrow"><use xlink:href="images/sprite.svg#slick-next"></use></svg>',
-  dots: true,
-  infinite: false,
-  slidesToShow: 1,
-  slidesToScroll: 1,
 
-  responsive: [
-    {
-      breakpoint: 769,
-      settings: {
-        arrows: false,
+function initializeSlick() {
+  $(".product__slider-items").slick({
+    nextArrow: '<button type="button" class="product__slider-btn product__slider-btn--next"><svg class="product__slider-arrow"><use xlink:href="images/sprite.svg#slick-back"></use></svg></button>',
+    prevArrow: '<button type="button" class="product__slider-btn product__slider-btn--back"><svg class="product__slider-arrow"><use xlink:href="images/sprite.svg#slick-next"></use></svg></button>',
+    dots: false,
+    infinite: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 576,
+        settings: "unslick", // Отключаем слайдер для разрешений ниже 576px
+      },
+      {
+        breakpoint: 769,
+        settings: {
+          arrows: false,
+          dots: true,
+        },
+      },
+    ],
+  });
+}
+
+initializeSlick();
+$(window).on('resize', function() {
+  if ($(window).width() > 576 && !$(".product__slider-items").hasClass('slick-initialized')) {
+    initializeSlick();
+  }
+});
+
+// Инициализация слайдера
+let myCarousel;
+
+function initCarousel() {
+myCarousel = new Carousel(document.getElementById("myCarousel"), {
+  preload: 2,
+  Dots: false,
+  infinite: false,
+});
+
+Fancybox.bind('[data-fancybox="gallery"]', {
+  infinite: false,
+  Thumbs: false,
+  Toolbar: false,
+  closeButton: "top",
+  Carousel: {
+    Dots: true,
+    on: {
+      change: (that) => {
+        if (myCarousel) {
+          myCarousel.slideTo(myCarousel.findPageForSlide(that.page), {
+            friction: 0,
+          });
+        }
       },
     },
-  ],
+  },
 });
+}
+
+// Функция для проверки ширины окна и управления слайдером
+function checkWindowSize() {
+if (window.innerWidth <= 576) {
+  if (myCarousel) {
+    myCarousel.destroy();
+    myCarousel = null;  
+  }
+  document.querySelectorAll('.product__image-placeholder').forEach(img => {
+    img.style.display = 'block';
+  });
+  document.getElementById("myCarousel").style.display = 'none';
+} else {
+  if (!myCarousel) {
+    initCarousel();
+  }
+  document.querySelectorAll('.product__image-placeholder').forEach(img => {
+    img.style.display = 'none';
+  });
+  document.getElementById("myCarousel").style.display = 'block';
+}
+}
+
+checkWindowSize();
+
+window.addEventListener('resize', checkWindowSize);
+
 
 // mixitup
 var mixer = mixitup(".popular-categories__items");
